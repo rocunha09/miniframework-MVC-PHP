@@ -5,8 +5,8 @@
 	},
 	"authors": [
 		{
-			"name": "Jorge Sant Ana",
-			"email": "jorge@teste.com.br"
+			"name": "Rafael",
+			"email": "rafael@teste.com.br"
 		}
 	],
 	"autoload": {
@@ -14,5 +14,6 @@
 			"App\\": "App/",
 			"MF\\": "vendor/MF/"
 		}
-	}
+	},
+	"description": "..."
 }
