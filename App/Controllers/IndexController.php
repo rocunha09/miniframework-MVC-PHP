@@ -3,18 +3,27 @@
 
 namespace App\Controllers;
 
+//inclui a classe Action do namespace MF\Controller para extender
+use MF\Controller\Action;
 
-class IndexController{
+class IndexController extends Action {
 
     public function index(){
-        echo 'route->indexControler->action = index';
+        /*
+            Usando o atributo view (criado na classe abstrata action) de forma dinâmica, atribuindo dados a ele.
+        */
+        $this->view->dados = array('Sofá', 'Cadeira', 'Cama');
+        $this->render('index');
     }
 
     public function sobreNos(){
-        echo 'route->indexControler->action = sobreNos';
+        $this->view->dados = array('Computador', 'calculadora', 'caneta');
+        $this->render('sobreNos');
     }
 
     public function contato(){
-        echo 'route->indexControler->action = contato';
+        $this->view->dados = array();
+        $this->render('contato');
     }
+
 }
