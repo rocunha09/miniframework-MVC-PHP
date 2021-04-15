@@ -1,8 +1,22 @@
 <h1>Index</h1>
 <hr>
-
-<?php
-    foreach ($this->view->dados as $i => $valor){
-        echo $valor . '<br>';
-    }
-?>
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Preço</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php  foreach ($this->view->dados as $i => $produto){  ?>
+        <tr>
+            <th scope="row"><?= $produto['id'] ?></th>
+            <td><?= $produto['descricao'] ?></td>
+            <td><?= $produto['preco'] ?></td>
+        </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+</div>

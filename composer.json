@@ -1,7 +1,8 @@
 {
 	"name": "vendorname/miniframework",
 	"require": {
-		"php": ">= 7.0"
+		"php": ">= 7.0",
+		"ext-pdo": "*"
 	},
 	"authors": [
 		{
