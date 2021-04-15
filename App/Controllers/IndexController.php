@@ -13,4 +13,8 @@ class IndexController{
     public function sobreNos(){
         echo 'route->indexControler->action = sobreNos';
     }
+
+    public function contato(){
+        echo 'route->indexControler->action = contato';
+    }
 }
