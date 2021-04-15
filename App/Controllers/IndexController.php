@@ -9,21 +9,19 @@ use MF\Controller\Action;
 class IndexController extends Action {
 
     public function index(){
-        /*
-            Usando o atributo view (criado na classe abstrata action) de forma dinâmica, atribuindo dados a ele.
-        */
+         // Usando o atributo view (criado na classe abstrata action) de forma dinâmica, atribuindo dados a ele.
         $this->view->dados = array('Sofá', 'Cadeira', 'Cama');
-        $this->render('index');
+        $this->render('index', 'layout1');
     }
 
     public function sobreNos(){
         $this->view->dados = array('Computador', 'calculadora', 'caneta');
-        $this->render('sobreNos');
+        $this->render('sobreNos', 'layout3');
     }
 
     public function contato(){
         $this->view->dados = array();
-        $this->render('contato');
+        $this->render('contato', 'layout1');
     }
 
 }
