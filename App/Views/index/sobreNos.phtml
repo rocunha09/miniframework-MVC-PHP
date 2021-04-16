@@ -1,8 +1,18 @@
 <h1>Sobre Nós</h1>
 <hr>
+<div class="container">
 
-<?php
-foreach ($this->view->dados as $i => $valor){
-    echo $valor . '<br>';
-}
-?>
+    <?php  foreach ($this->view->dados as $i => $info){  ?>
+        <div class="card mb-5">
+            <div class="card-header">
+                <h3><?= $info['titulo'] ?></h3>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p><?= $info['descricao'] ?></p>
+                </blockquote>
+            </div>
+        </div>
+    <?php } ?>
+
+</div>

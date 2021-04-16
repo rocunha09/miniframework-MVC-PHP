@@ -5,33 +5,30 @@ namespace App\Controllers;
 
 
 use App\Connection;
+use App\Models\Info;
 use App\Models\Produto;
-use MF\Controller\Action;//inclui a classe Action do namespace MF\Controller para extender
+
+use MF\Controller\Action;
+use MF\Model\Container;
+
+//inclui a classe Action do namespace MF\Controller para extender
 
 class IndexController extends Action {
 
     public function index(){
-        //Usando o atributo view (criado na classe abstrata action) de forma dinâmica, atribuindo dados a ele.
-        //$this->view->dados = array('Sofá', 'Cadeira', 'Cama');
-
-        //instanciar a conexão com o banco e o modelo, e assim poder manipular os dados e sua visualização
-
-        //instancia de conexão com o banco
-        $conn = Connection::getDb();
-
-        //instancia do modelo
-        $produto = new Produto($conn);
-
+        $produto = Container::getModel('Produto');
         $produtos = $produto->getProdutos();
-
         $this->view->dados = $produtos;
 
         $this->render('index', 'layout1');
     }
 
     public function sobreNos(){
+         $info = Container::getModel('Info');
+        $informacoes = $info->getInfo();
+        $this->view->dados = $informacoes;
 
-        $this->render('sobreNos', 'layout3');
+        $this->render('sobreNos', 'layout1');
     }
 
     public function contato(){

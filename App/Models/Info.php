@@ -4,17 +4,15 @@
 namespace App\Models;
 
 
-class Produto{
+class Info{
     protected $db;
 
     public function __construct(\PDO $db){
         $this->db = $db;
     }
 
-    public function getProdutos(){
-        //return  array('Sofá', 'Cadeira', 'Cama', 'cobertor');
-
-        $query = "select id, descricao, preco from tb_produtos";
+    public function getInfo(){
+        $query = "select titulo, descricao from tb_info";
         return $this->db->query($query)->fetchAll();
     }
 
